@@ -3,5 +3,6 @@
       <div class="card" style="width: 18rem;">
         <%# image_tag "https://source.unsplash.com/featured/?flat&#{rand(1..100)}", class: "card-img-top" %>
       </div>
+      <%= link_to  "Delete", plant_path(@plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <%= link_to 'Back', plants_path(@plants) %>
 </div>
