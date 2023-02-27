@@ -1,0 +1,15 @@
+<h1> Make a plant </h1>
+
+  <%= simple_form_for(@plant) do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :city %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
