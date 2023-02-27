@@ -9,6 +9,11 @@
         <% @plants.each do |plant| %>
         <div class= "card">
           <h2><%= link_to plant.title, plant_path(plant) %></h2>
+          <p><%= plant.description %></p>
+          <p><%= plant.price %></p>
+          <p><%= plant.city %></p>
+          <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
+          <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
         <% end %>
       </div>
