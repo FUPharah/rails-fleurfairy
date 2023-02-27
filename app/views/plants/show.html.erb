@@ -1,0 +1,7 @@
+<div class="container">
+    <h1><%= @plant.title %></h1>
+      <div class="card" style="width: 18rem;">
+        <%# image_tag "https://source.unsplash.com/featured/?flat&#{rand(1..100)}", class: "card-img-top" %>
+      </div>
+    <%= link_to 'Back', plants_path(@plants) %>
+</div>
