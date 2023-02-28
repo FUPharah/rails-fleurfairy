@@ -14,10 +14,12 @@
           <p><%= plant.city %></p>
           <p><%= plant.price %></p>
           <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
-          <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= button_to "sign out", destroy_user_session_path, method: :delete %>
         </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%# plant.bookings.each do |boooking| %>
