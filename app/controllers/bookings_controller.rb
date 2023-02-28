@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
-  #before_action :set_booking, only: %i[show edit update destroy search index new create destroy]
-  before_action :set_plant, only: %i[new index create show edit update destroy]
-
-  def index
-    @bookings = Booking.all
-  end
+  #before_action :set_booking, only: %i[show]
+  before_action :set_plant, only: %i[new create]
 
   def show
     @booking = Booking.find(params[:id])
@@ -18,13 +14,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.plant = @plant
     @booking.user = current_user
-    @booking.save
-    redirect_to plant_path(@plant), notice: "Thank you for booking #{@plant.title}."
+    if @booking.save
+      redirect_to plant_path(@plant), notice: "Thank you for booking #{@plant.title}."
+    else
+      render :new
+    end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   def search
