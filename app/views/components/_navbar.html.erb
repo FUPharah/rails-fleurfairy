@@ -3,7 +3,7 @@
     <%= image_tag "logo.png", height: 50 %>
   </div>
   <div class = nav-user-icon>
-    <i class = "fa-solid fa-user"></i>
+    <%= button_to 'Login', new_user_session_path %><i class = "fa-solid fa-user"></i><%= button_to "Logout", destroy_user_session_path, method: :delete %>
   </div>
   <div class = "nav-envelope-icon">
     <i class="fa-thin fa-envelope"></i>  </div>
