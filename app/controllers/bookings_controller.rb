@@ -31,6 +31,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.search(params[:search])
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
   private
 
   def set_plant
