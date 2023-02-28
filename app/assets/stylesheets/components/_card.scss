@@ -1,4 +1,25 @@
-.flex-container {
-  display: flex;
-  justify-content: space-between;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  height: 410px;
+  width: 400px;
+}
+
+.card:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+}
+
+.card img {
+  width: 400px;
+  height: 200px;
+  object-fit: contain;
+  transition: transform .5s ease;
+}
+
+.card_picture:hover img {
+  transform: scale(1.5);
 }
