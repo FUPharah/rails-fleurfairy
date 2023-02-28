@@ -4,14 +4,15 @@
 <div class= "cards">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-6">
-        <%= link_to 'add a new plant', new_plant_path, class:'btn-danger' %>
+      <%= link_to 'add a new plant', new_plant_path, class:'btn-danger' %>
+      <div class="flex-container">
         <% @plants.each do |plant| %>
-        <div class= "card">
-          <h2><%= link_to plant.title, plant_path(plant) %></h2>
+        <div class="card flex-item" >
+          <img width='100%' src='https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg?f=xl' style="object-fit: cover; vertical-align: bottom;" />
+          <h2><%= link_to plant.title, plant_path(plant) %> </h2>
           <p><%= plant.description %></p>
-          <p><%= plant.price %></p>
           <p><%= plant.city %></p>
+          <p><%= plant.price %></p>
           <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
           <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
