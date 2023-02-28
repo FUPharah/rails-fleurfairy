@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.plant = @plant
     @booking.user = current_user
     @booking.save
-    redirect_to plant_path(@plant), notice: 'Booking was successfully created.'
+    redirect_to plant_path(@plant), notice: "Thank you for booking #{@plant.title}."
   end
 
   def destroy
