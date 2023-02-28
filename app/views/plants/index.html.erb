@@ -1,23 +1,26 @@
-<div class= "banner-container">
-<h1> Plants </h1>
-</div>
-<div class= "cards">
-  <div class="container">
-    <div class="row justify-content-center">
-      <%= link_to 'add a new plant', new_plant_path, class:'btn-danger' %>
-      <div class="flex-container">
-        <% @plants.each do |plant| %>
-        <div class="card flex-item" >
-          <img width='100%' src='https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg?f=xl' style="object-fit: cover; vertical-align: bottom;" />
-          <h2><%= link_to plant.title, plant_path(plant) %> </h2>
-          <p><%= plant.description %></p>
-          <p><%= plant.city %></p>
-          <p><%= plant.price %></p>
-          <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
-          <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<%= render "pages/banner" %>
+<div class = container>
+  <div class= "banner-container">
+  <h1> Find your perfect plant </h1>
+  </div>
+  <div class= "cards">
+    <div class="container">
+      <div class="row justify-content-center">
+        <%= link_to 'add a new plant', new_plant_path, class:'btn-danger' %>
+        <div class="cards">
+          <% @plants.each do |plant| %>
+          <div class="card" >
+            <%= link_to(image_tag("https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg?f=xl"), plant_path(plant)) %>
+            <h2><%= link_to plant.title, plant_path(plant) %> </h2>
+            <p><%= plant.description %></p>
+            <p><%= plant.city %></p>
+            <p><%= plant.price %></p>
+            <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
+            <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
-</div>
+  </div>
