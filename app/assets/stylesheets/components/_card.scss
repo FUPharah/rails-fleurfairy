@@ -1,11 +1,19 @@
+.all-plants {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
 .cards {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-  height: 410px;
+  height: 360px;
   width: 400px;
 }
 
@@ -22,4 +30,33 @@
 
 .card_picture:hover img {
   transform: scale(1.5);
+}
+
+.card-infos {
+  overflow: hidden;
+  background: white;
+}
+
+.card-infos > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-infos h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-infos h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-infos p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
 }

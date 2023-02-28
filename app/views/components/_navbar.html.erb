@@ -1,0 +1,16 @@
+<div class = "navbar flex-container">
+  <div class = nav-logo>
+    <%= image_tag "logo.png", height: 50 %>
+  </div>
+  <div class = nav-user-icon>
+    <i class = "fa-solid fa-user"></i>
+  </div>
+  <div class = "nav-envelope-icon">
+    <i class="fa-thin fa-envelope"></i>  </div>
+  <div class = "nav-button">
+    <%= link_to 'Add Plant', new_plant_path, class: 'button-blue' %>
+  </div>
+</div>
+
+
+    <%# <%= link_to '+', new_plant_path, class: 'button-small' %>
