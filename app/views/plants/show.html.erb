@@ -1,8 +1,14 @@
 <div class="container">
     <h1><%= @plant.title %></h1>
       <div class="card" style="width: 18rem;">
-        <%# image_tag "https://source.unsplash.com/featured/?flat&#{rand(1..100)}", class: "card-img-top" %>
+        <div class="card-body">
+          <h3 class="card-title"><%= @plant.title %></h3>
+          <p class="card-text"><%= @plant.description %></p>
+          <p class="card-text"><%= @plant.price %></p>
+          <p class="card-text"><%= @plant.city %></p>
+        </div>
       </div>
+      <%= link_to 'Book this plant',  new_plant_booking_path(@plant) %>
       <%= link_to  "Delete", plant_path(@plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <%= link_to 'Back', plants_path(@plants) %>
 </div>

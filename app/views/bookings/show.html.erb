@@ -1,0 +1,10 @@
+<h1>Bookings#show</h1>
+
+<p><strong>Booking</strong></p>
+<ul class="list-group">
+  <% @booking.plants.each do |plant| %>
+    <li class="list-group-item">
+      <%= plant.title %>
+    </li>
+  <% end %>
+</ul>
