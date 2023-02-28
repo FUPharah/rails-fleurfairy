@@ -1,8 +1,8 @@
 <p><strong>Booking</strong></p>
-<%# <ul class="list-group"> %>
-  <%#@booking.plants.each do |plant| %>
-    <%# <li class="list-group-item"> %>
-      <%#= plant.title %>
-    <%# </li> %>
-  <%# end %>
-<%# </ul> %>
+<ul class="list-group">
+  <% @plant.bookings.each do |booking| %>
+    <li class="list-group-item">
+      <%= booking.plant.title %>
+    </li>
+  <% end %>
+</ul>
