@@ -17,7 +17,6 @@
             <h3 class="card-price"><%= plant.price %></h3>
             <div class="card-links">
               <p><%= link_to 'Book this plant',  new_plant_booking_path(plant) %> </p>
-              <p><%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> </p>
             </div>
           </div>
           <% end %>

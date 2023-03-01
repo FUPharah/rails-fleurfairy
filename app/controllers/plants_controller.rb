@@ -18,6 +18,10 @@ class PlantsController < ApplicationController
     end
   end
 
+  def edit
+    @plant = Plant.find(params[:id])
+  end
+
   def show
     @plant = Plant.find(params[:id])
   end
