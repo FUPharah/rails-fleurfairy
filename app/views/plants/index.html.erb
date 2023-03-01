@@ -5,7 +5,7 @@
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
-            <div class="card-img" style="background-image: url(<%= plant.url %>)" >
+            <div class="card-img" style="background-image: url(<%= plant.photo.attached? ? cl_image_path(plant.photo.key) : plant.url %>)" >
               <div class="card-Link" >
                 <%= link_to '+',  new_plant_booking_path(plant) %>
               </div>
