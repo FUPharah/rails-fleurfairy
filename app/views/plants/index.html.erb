@@ -8,7 +8,11 @@
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
+          <% if plant.photo.attached?  %>
+            <%= cl_image_tag plant.photo.key, height: 200, width: 300, crop: :fill %>
+          <% else %>
             <img src="<%= plant.url %>" style="width: 16rem;">
+          <% end %>
             <h2><%= link_to plant.title, plant_path(plant) %> </h2>
             <p><%= plant.city %></p>
             <p><%= plant.price %></p>
