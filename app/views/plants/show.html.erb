@@ -2,7 +2,11 @@
     <h1><%= @plant.title %></h1>
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <img src="<%= @plant.url %>" style="width: 16rem;">
+        <% if @plant.photo.attached?  %>
+            <%= cl_image_tag @plant.photo.key, height: 200, width: 300, crop: :fill %>
+          <% else %>
+            <img src="<%= @plant.url %>" style="width: 16rem;">
+          <% end %>
           <h3 class="card-title"><%= @plant.title %></h3>
           <p class="card-text"><%= @plant.description %></p>
           <p class="card-text"><%= @plant.price %></p>
@@ -10,7 +14,5 @@
         </div>
       </div>
       <%= link_to 'Book this plant',  new_plant_booking_path(@plant) %>
-      <%= link_to  "Delete", plant_path(@plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <%= link_to 'Back', plants_path(@plants) %>
-    <%#= link_to 'Edit', edit_plant_booking_path(@plant, @booking) %>
 </div>

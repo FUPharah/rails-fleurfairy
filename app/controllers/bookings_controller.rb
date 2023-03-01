@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-  #before_action :set_booking, only: %i[show]
-  before_action :set_plant, only: %i[new create]
+  before_action :set_plant, only: %i[new create edit update]
 
   def show
     @booking = Booking.find(params[:id])
@@ -33,6 +32,13 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @booking.save
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to dashboard_path
   end
 
   private
@@ -43,9 +49,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :user_id, :plant_id)
-  end
-
-  def set_booking
-    @booking = Booking.find(params[:id])
   end
 end

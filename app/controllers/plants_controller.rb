@@ -22,6 +22,12 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
+  def update
+    @plant = Plant.find(params[:id])
+    @plant.update(plant_params)
+    redirect_to dashboard_path
+  end
+
   def show
     @plant = Plant.find(params[:id])
   end
@@ -35,7 +41,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:title, :description, :price, :city)
+    params.require(:plant).permit(:title, :description, :price, :city, :photo)
   end
 
   def set_plant
