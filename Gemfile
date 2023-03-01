@@ -33,6 +33,7 @@ gem "jbuilder"
 gem 'devise'
 gem 'faker'
 gem 'pundit'
+gem 'erb-formatter'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
