@@ -1,4 +1,4 @@
-<h1>-Bookings#new</h1>
+<h1>You're booking <%= @plant.title %>.</h1>
 
 <%= simple_form_for [@plant, @booking] do |f| %>
   <%= f.input :start_date %>
