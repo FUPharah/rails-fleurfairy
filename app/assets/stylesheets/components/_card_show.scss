@@ -1,0 +1,66 @@
+
+.cardss-s {
+  margin-top: 30px;
+  margin-left: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  position: relative;
+}
+
+.cardss- {
+  height: 700px;
+  width: 400px;
+  background-color: white;
+  margin-left: 400px;
+}
+
+.cardss-:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+  transform: scale(1.03);
+}
+
+.cardss--img {
+  height: 350px;
+  object-fit: contain;
+}
+
+.cardss--link{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.cardss--infos {
+  // overflow: hidden;
+  background: white;
+  position: relative;
+  width: 400px;
+  height: 70px;
+}
+
+.cardss--title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.cardss--price {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.cardss--infos h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cardss--infos p {
+  font-size: 12px;
+  opacity: .7;
+}
+.cardss--price p {
+  font-size: 12px;
+  font-weight: bold;
+}
