@@ -1,15 +1,14 @@
-<%= render "pages/banner" %>
-<div class = container>
-  <div class= "banner-container">
+<%= render "components/banner" %>
+<div class = "container all-plants">
   <h1> Find your perfect plant </h1>
-  </div>
+  <%= link_to 'Add Plant', new_plant_path, class: 'button-blue' %>
   <div class= "cards">
     <div class="container">
       <div class="row justify-content-center">
-        <%= link_to 'add a new plant', new_plant_path, class:'btn-danger' %>
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
+
             <img src="<%= plant.url %>" style="width: 16rem;">
             <h2><%= link_to plant.title, plant_path(plant) %> </h2>
             <p><%= plant.description %></p>
@@ -23,4 +22,4 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
