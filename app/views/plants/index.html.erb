@@ -8,14 +8,11 @@
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
-
             <img src="<%= plant.url %>" style="width: 16rem;">
             <h2><%= link_to plant.title, plant_path(plant) %> </h2>
-            <p><%= plant.description %></p>
             <p><%= plant.city %></p>
             <p><%= plant.price %></p>
-            <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
-            <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            <%= link_to '+',  new_plant_booking_path(plant) %>
           </div>
           <% end %>
         </div>
