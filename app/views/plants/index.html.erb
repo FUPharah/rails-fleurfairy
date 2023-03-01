@@ -8,16 +8,14 @@
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
-            <%= link_to(image_tag("https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg?f=xl"), plant_path(plant)) %>
-            <div class="card-infos">
-              <h2><%= link_to plant.title, plant_path(plant) %> </h2>
-              <p><%= plant.description %></p>
-              <p><%= plant.city %></p>
-            </div>
-            <h3 class="card-price"><%= plant.price %></h3>
-            <div class="card-links">
-              <p><%= link_to 'Book this plant',  new_plant_booking_path(plant) %> </p>
-            </div>
+
+            <img src="<%= plant.url %>" style="width: 16rem;">
+            <h2><%= link_to plant.title, plant_path(plant) %> </h2>
+            <p><%= plant.description %></p>
+            <p><%= plant.city %></p>
+            <p><%= plant.price %></p>
+            <%= link_to 'Book this plant',  new_plant_booking_path(plant) %>
+            <%= link_to  "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
           </div>
           <% end %>
         </div>
