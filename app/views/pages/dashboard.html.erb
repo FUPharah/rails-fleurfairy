@@ -2,7 +2,7 @@
 <% @plants.each do |plant| %>
   <div class="card flex-item" >
     <%# img width='100%' src='https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg?f=xl' style="object-fit: cover; vertical-align: bottom;" /> %>
-    <h2><%= plant.title %></h2>
+    <h2><%=link_to plant.title, plant_path(plant) %></h2>
       <p><%= plant.description %></p>
       <p><%= plant.price %></p>
       <p><%= plant.city %></p>

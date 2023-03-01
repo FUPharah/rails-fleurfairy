@@ -22,6 +22,12 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
+  def update
+    @plant = Plant.find(params[:id])
+    @plant.update(plant_params)
+    redirect_to dashboard_path
+  end
+
   def show
     @plant = Plant.find(params[:id])
   end
