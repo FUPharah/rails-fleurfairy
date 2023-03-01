@@ -3,7 +3,6 @@
 <%= simple_form_for [@plant, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.association :plant, collection: Plant.all.order(:title) %>
   <%= f.button :submit %>
 <% end %>
 <%= link_to "back", plant_path(@plant) %>
