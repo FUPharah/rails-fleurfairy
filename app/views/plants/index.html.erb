@@ -10,7 +10,7 @@
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
-            <%= link_to(image_tag("https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg?f=xl"), plant_path(plant)) %>
+            <img src="<%= plant.url %>" style="width: 16rem;">
             <h2><%= link_to plant.title, plant_path(plant) %> </h2>
             <p><%= plant.description %></p>
             <p><%= plant.city %></p>
