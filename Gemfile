@@ -87,3 +87,5 @@ group :development do
 end
 
 gem "cloudinary"
+
+gem 'image_processing'
