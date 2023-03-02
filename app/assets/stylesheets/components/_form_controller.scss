@@ -1,3 +1,11 @@
 .form-control {
   border: 1px solid $blue;
 }
+
+.all-plants-form {
+  width: 50%;
+}
+
+.form-control .is-valid {
+  border-color: $blue;
+}

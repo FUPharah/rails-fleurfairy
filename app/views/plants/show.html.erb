@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container show-my-plant">
 
   <% if @plant.photo.attached?  %>
-    <%= cl_image_tag @plant.photo.key, height: 500, width: 400, crop: :fill %>
+    <%= cl_image_tag @plant.photo.key, crop: :fill %>
   <% else %>
     <img src="<%= @plant.url %>" style="width: 100%">
   <% end %>
-  <p class="cardss--text"><%= @plant.title %></p>
-  <p class="cardss--text"><%= @plant.city %></p>
-  <p class="cardss--text"><%= @plant.description %></p>
+  <p class="my-plant"><%= @plant.title %></p>
+  <p class="my-plant"><%= @plant.city %></p>
+  <p class="my-plant"><%= @plant.description %></p>
   <div class="center mt-4" >
   <%= link_to 'Book this plant', new_plant_booking_path(@plant), class: "button-blue" %>
   </div>
