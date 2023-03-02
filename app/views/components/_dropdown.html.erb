@@ -4,7 +4,7 @@
       <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key, crop: :fill %>
       <% else %>
-        <%= image_tag('user.svg', class: "rounded") %>
+        <%= image_tag('user.svg', class: "rounded") %>  
       <% end %>
 
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
