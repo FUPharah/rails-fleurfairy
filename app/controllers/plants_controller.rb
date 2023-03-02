@@ -6,7 +6,12 @@ class PlantsController < ApplicationController
   end
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR description ILIKE :query"
+      @plants = Plant.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @plants = Plant.all
+    end
   end
 
   def create

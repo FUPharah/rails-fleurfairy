@@ -1,0 +1,8 @@
+<%= form_with url: plants_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a plant"
+  %>
+  <%= submit_tag "Search", class: "button-blue" %>
+<% end %>
