@@ -1,12 +1,11 @@
 <li class="nav-item dropdown">
   <% if user_signed_in? %>
-    <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <% if current_user.avatar.attached? %>
-        <%= cl_image_tag current_user.avatar.key, width: 50, height: 50, crop: :fill %>
+        <%= cl_image_tag current_user.avatar.key, crop: :fill %>
       <% else %>
-        <%= image_tag('user.svg', class: "rounded", size: "100x100") %>
+        <%= image_tag('user.svg', class: "rounded") %>
       <% end %>
-    </img>
 
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" href="#">My Plants</a>
