@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container show">
 
   <% if @plant.photo.attached?  %>
     <%= cl_image_tag @plant.photo.key, height: 500, width: 400, crop: :fill %>
