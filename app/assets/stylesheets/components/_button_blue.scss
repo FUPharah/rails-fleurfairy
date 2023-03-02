@@ -25,3 +25,9 @@ text-decoration: none;
   opacity: 0.8;
   box-shadow: 0px 8px 30px rgba(46, 46, 46, 0.15);
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

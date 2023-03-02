@@ -3,11 +3,13 @@
   <% if @plant.photo.attached?  %>
     <%= cl_image_tag @plant.photo.key, height: 500, width: 400, crop: :fill %>
   <% else %>
-    <img src="<%= @plant.url %>">
+    <img src="<%= @plant.url %>" style="width: 100%">
   <% end %>
   <p class="cardss--text"><%= @plant.title %></p>
   <p class="cardss--text"><%= @plant.city %></p>
   <p class="cardss--text"><%= @plant.description %></p>
-  <%= link_to 'Book this plant',  new_plant_booking_path(@plant) %>
+  <div class="center mt-4" >
+  <%= link_to 'Book this plant', new_plant_booking_path(@plant), class: "button-blue" %>
+  </div>
   <%= link_to 'Back', plants_path(@plants) %>
 </div>
