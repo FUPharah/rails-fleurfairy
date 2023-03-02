@@ -12,8 +12,6 @@
   user.save!
 end
 
-Plant.destroy_all
-
 Plant.create!(title: "Beautiful, tall almond tree", city: "Munich/ Germany",
 description: "My 3 metres tall almond tree. It is strikingly beautiful when in flowers, it produces fragrant, five-petaled,
 light pink to white flowers from late January to early April", price: 10, user: User.all.sample, url: "https://www.epicgardening.com/wp-content/uploads/2020/04/Almond-tree-in-flower.jpg" )

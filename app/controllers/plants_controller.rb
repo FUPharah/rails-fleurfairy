@@ -10,7 +10,13 @@ class PlantsController < ApplicationController
       sql_query = "title ILIKE :query OR description ILIKE :query"
       @plants = Plant.where(sql_query, query: "%#{params[:query]}%")
     else
-      @plants = Plant.all
+    @plants = Plant.all
+    end
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude
+      }
     end
   end
 

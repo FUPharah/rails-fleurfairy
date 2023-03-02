@@ -1,5 +1,6 @@
 <div class="container show-my-plant">
 
+
   <% if @plant.photo.attached?  %>
     <%= cl_image_tag @plant.photo.key, crop: :fill %>
   <% else %>
