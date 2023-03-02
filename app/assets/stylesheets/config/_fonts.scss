@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap');
 
 $button: "Catamaran";
 $body-font: "Catamaran";
@@ -47,11 +48,13 @@ p {
 .cardss--infos p {
   font-family: 'Catamaran';
 }
+
 .cardss--price p {
   font-family: 'Catamaran';
 }
 
 .card-infos {
+
   font-family: 'Catamaran';
 }
 
@@ -73,4 +76,3 @@ p {
 
 .card-price p {
   font-family: 'Catamaran';
-}
