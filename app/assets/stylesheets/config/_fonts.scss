@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200&display=swap');
 
 $button: "Catamaran";
-$body-font: "Assistant";
+$body-font: "Catamaran";
 $headers-font: "Catamaran";
 
 p {
@@ -11,4 +11,8 @@ p {
 
 .button-blue {
   font-family: 'Catamaran';
+}
+
+.button-small {
+  font-family: 'Catamaran'
 }
