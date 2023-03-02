@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     @plants = current_user.plants
     @bookings = current_user.bookings
   end
+
+  def myplants
+    @plants = current_user.plants
+  end
 end

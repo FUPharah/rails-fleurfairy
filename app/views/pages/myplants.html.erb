@@ -1,0 +1,13 @@
+<h1> My Plants </h1>
+
+<% @plants.each do |plant| %>
+  <div class="card flex-item" >
+    <h2><%=link_to plant.title, plant_path(plant) %></h2>
+      <p><%= plant.description %></p>
+      <p><%= plant.price %></p>
+      <p><%= plant.city %></p>
+      <p><%= plant.user.email %></p>
+      <%= link_to "Edit Plant", edit_plant_path(plant) %>
+      <%= link_to "Delete Plant", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </div>
+  <% end %>

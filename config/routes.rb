@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :plants, only: %i[index show new create destroy edit update] do
     resources :bookings, only: %i[new create edit update]
   end
-  resources :bookings, only: %i[show destroy]
+  resources :bookings, only: %i[show destroy index]
   get "dashboard", to: "pages#dashboard"
+  get "myplants", to: "pages#myplants"
 end
