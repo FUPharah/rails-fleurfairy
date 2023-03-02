@@ -7,6 +7,12 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude
+      }
+    end
   end
 
   def create

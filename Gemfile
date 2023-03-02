@@ -86,6 +86,8 @@ group :development do
   gem "binding_of_caller"
 end
 
+gem "geocoder"
+
 gem "cloudinary"
 
 gem 'image_processing'
