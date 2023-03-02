@@ -1,8 +1,17 @@
-<h1> My Plants </h1>
+<div class = "container show-my-plant">
+
+  <div >
+    <h1 style="color: #04ACB5;">My Plants</h1>
+  </div>
 
 <% @plants.each do |plant| %>
-  <div class="card flex-item" >
+  <div class="my-plant" >
     <h2><%=link_to plant.title, plant_path(plant) %></h2>
+        <% if @plant.photo.attached?  %>
+        <%= cl_image_tag @plant.photo.key, crop: :fill %>
+        <% else %>
+          <img src="<%= @plant.url %>" style="width: 100%">
+        <% end %>
       <p><%= plant.description %></p>
       <p><%= plant.price %></p>
       <p><%= plant.city %></p>
@@ -11,3 +20,4 @@
       <%= link_to "Delete Plant", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </div>
   <% end %>
+</div>
