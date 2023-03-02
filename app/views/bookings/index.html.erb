@@ -1,9 +1,12 @@
-<h3> Bookings you made </h3>
-      <% Booking.where(user_id: current_user.id).each do |booking| %>
-      <div class="card flex-item" >
-        <%= booking.plant.title %>
-        <p>Start Date= <%= booking.start_date %></p>
-        <p>End Date= <%= booking.end_date %></p>
-        <%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-        <%= link_to "Edit this booking", edit_plant_booking_path(booking.plant, booking) %>
-      <% end %>
+<div class="container show-my-plant">
+
+  <h3> Bookings you made </h3>
+        <% Booking.where(user_id: current_user.id).each do |booking| %>
+        <div class="card flex-item" >
+          <%= booking.plant.title %>
+          <p>Start Date= <%= booking.start_date %></p>
+          <p>End Date= <%= booking.end_date %></p>
+          <%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= link_to "Edit this booking", edit_plant_booking_path(booking.plant, booking) %>
+        <% end %>
+</div>
