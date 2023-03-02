@@ -1,17 +1,13 @@
 <div class="container">
-      <div class="cardss-" style="width: 18rem;">
-        <div class="cardss--body">
-        <% if @plant.photo.attached?  %>
-            <%= cl_image_tag @plant.photo.key, height: 500, width: 400, crop: :fill %>
-          <% else %>
-            <img src="<%= @plant.url %>" style="width: 16rem;">
-          <% end %>
-          <h1><%= @plant.title %></h1>
-          <p class="cardss--text"><%= @plant.description %></p>
-          <p class="cardss--text"><%= @plant.price %></p>
-          <p class="cardss--text"><%= @plant.city %></p>
-        </div>
-      </div>
-      <%= link_to 'Book this plant',  new_plant_booking_path(@plant) %>
-    <%= link_to 'Back', plants_path(@plants) %>
+
+  <% if @plant.photo.attached?  %>
+    <%= cl_image_tag @plant.photo.key, height: 500, width: 400, crop: :fill %>
+  <% else %>
+    <img src="<%= @plant.url %>">
+  <% end %>
+  <p class="cardss--text"><%= @plant.title %></p>
+  <p class="cardss--text"><%= @plant.city %></p>
+  <p class="cardss--text"><%= @plant.description %></p>
+  <%= link_to 'Book this plant',  new_plant_booking_path(@plant) %>
+  <%= link_to 'Back', plants_path(@plants) %>
 </div>

@@ -13,8 +13,8 @@ p {
   font-family: 'Catamaran';
 }
 
-.button-small {
-  font-family: 'Catamaran'
+.button-small {display: flex;
+  font-family: 'Catamaran';
 }
 
 .banner h1 {
@@ -22,6 +22,14 @@ p {
 }
 
 .banner p {
+  font-family: 'Catamaran';
+}
+
+.cardss--link{
+  font-family: 'Catamaran';
+}
+
+.cardss--infos {
   font-family: 'Catamaran';
 }
 
@@ -46,7 +54,7 @@ p {
 }
 
 .card-infos {
-  // overflow: hidden;
+
   font-family: 'Catamaran';
 }
 
@@ -68,4 +76,3 @@ p {
 
 .card-price p {
   font-family: 'Catamaran';
-}
