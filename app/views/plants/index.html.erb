@@ -1,7 +1,7 @@
 <%= render "components/banner" %>
 <div class = "container all-plants">
   <h1> Find your perfect plant </h1>
-    <div class="container">
+    <%# <div class="container"> %>
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
@@ -16,7 +16,7 @@
                 <p><%= plant.city %></p>
               </div>
               <div class="card-price" >
-                <h4><%= plant.price %>€</h4>
+                <h5><%= plant.price %>€</h5>
               </div>
             </div>
           </div>

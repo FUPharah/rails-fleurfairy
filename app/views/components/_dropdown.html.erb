@@ -1,7 +1,15 @@
-<ul class="dropdown">
-  <li><a href="/">Dropdown 1 </a></li>
-  <li><a href="/">Dropdown 2</a></li>
-  <li><a href="/">Dropdown 2</a></li>
-  <li><a href="/">Dropdown 3</a></li>
-  <li><a href="/">Dropdown 4</a></li>
-</ul>
+<li class="nav-item dropdown">
+  <% if user_signed_in? %>
+    <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">My Plants</a>
+      <a class="dropdown-item" href="#">Bookings</a>
+      <a class="dropdown-item" href="#">Edit Profile</a>
+      <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-turbo-method="delete">Log Out</a>
+    </div>
+  <% else %>
+      <%= link_to new_user_session_path, class: "nav-link person" do %>
+        <i class="fa-solid fa-circle-user fa-xl"></i>
+      <% end %>
+  <% end %>
+</li>

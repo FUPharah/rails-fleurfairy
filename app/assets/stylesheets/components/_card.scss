@@ -1,5 +1,6 @@
 .all-plants {
 margin-top: 30px;
+margin-bottom: 30px;
 }
 
 .cards {
@@ -11,19 +12,22 @@ margin-top: 30px;
 }
 
 .card {
-  height: 420px;
-  width: 400px;
+  height: 300px;
+  // width: 400px;
+  border-radius: 7px;
+	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
 }
 
 .card:hover {
-	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
   transform: scale(1.03);
 }
 
 .card-img {
-  height: 350px;
+  height: 80%;
   object-fit: contain;
   background-size: cover;
+  position: relative;
+  border-radius: 7px;
 }
 
 .card-link{
@@ -36,8 +40,10 @@ margin-top: 30px;
   // overflow: hidden;
   background: white;
   position: relative;
-  width: 400px;
-  height: 70px;
+
+  width: 100%;
+  height: 20%;
+  border-radius: 7px;
   font-family: 'Catamaran';
 }
 
