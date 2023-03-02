@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_plant, only: %i[new create edit update]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def show
     @booking = Booking.find(params[:id])
