@@ -7,17 +7,17 @@
 <% @plants.each do |plant| %>
   <div class="my-plant" >
     <h2><%=link_to plant.title, plant_path(plant) %></h2>
-        <% if @plant.photo.attached?  %>
-        <%= cl_image_tag @plant.photo.key, crop: :fill %>
+        <% if plant.photo.attached?  %>
+        <%= cl_image_tag plant.photo.key, crop: :fill %>
         <% else %>
-          <img src="<%= @plant.url %>" style="width: 100%">
+          <img src="<%= plant.url %>" style="width: 100%">
         <% end %>
       <p><%= plant.description %></p>
       <p><%= plant.price %></p>
       <p><%= plant.city %></p>
       <p><%= plant.user.email %></p>
-      <%= link_to "Edit Plant", edit_plant_path(plant) %>
-      <%= link_to "Delete Plant", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <%= link_to "Edit", edit_plant_path(plant), class:"button-blue" %>
+      <%= link_to "Delete", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-small" %>
   </div>
   <% end %>
 </div>

@@ -1,33 +1,37 @@
 <div class = "container show-my-plant">
 
+  <h1> Your plants </h1>
   <% @plants.each do |plant| %>
-    <div class=".form-control flex-item" >
+    <div class=".form-control flex-item my-plant" >
       <h2><%=link_to plant.title, plant_path(plant) %></h2>
-        <p><%= plant.description %></p>
-        <p><%= plant.price %></p>
-        <p><%= plant.city %></p>
-        <p><%= plant.user.email %></p>
-        <%= link_to "Edit Plant", edit_plant_path(plant) %>
-        <%= link_to "Delete Plant", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <p><%= plant.description %></p>
+      <p><%= plant.price %></p>
+      <p><%= plant.city %></p>
+      <p><%= plant.user.email %></p>
+      <%= link_to "Edit ", edit_plant_path(plant), class:"button-blue" %>
+      <%= link_to "Delete ", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-small" %>
     </div>
-        <h3> Bookings made for your plant </h3>
-          <% plant.bookings.each do |booking| %>
-          <div class=".form-control flex-item" >
-          <%= booking.user.email %>
-          <p>Start Date= <%= booking.start_date %></p>
-          <p>End Date= <%= booking.end_date %></p>
-          <%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-          <%= link_to "Edit this booking", edit_plant_booking_path(plant, booking) %>
-        <% end %>
+  <% plant.bookings.each do |booking| %>
+    <div class=".form-control flex-item my-plant" >
+      <%= booking.user.email %>
+      <p>Start Date= <%= booking.start_date %></p>
+      <p>End Date= <%= booking.end_date %></p>
+      <%= link_to "Edit", edit_plant_booking_path(plant, booking), class:"button-blue" %>
+      <%= link_to "Delete ", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-small" %>
+    </div>
   <% end %>
-      <h3> Bookings you made </h3>
-        <% Booking.where(user_id: current_user.id).each do |booking| %>
-        <div class=".form-control flex-item" >
-          <%= booking.plant.title %>
-          <p>Start Date= <%= booking.start_date %></p>
-          <p>End Date= <%= booking.end_date %></p>
-          <%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-          <%= link_to "Edit this booking", edit_plant_booking_path(booking.plant, booking) %>
-        <% end %>
-        </div>
+  <% end %>
+
+
+  <h3> Your Bookings </h3>
+  <% Booking.where(user_id: current_user.id).each do |booking| %>
+  <div class=".form-control flex-item my-plant" >
+    <h2><%= link_to booking.plant.title, plant_path(booking.plant) %></h2>
+    <p>Start Date= <%= booking.start_date %></p>
+    <p>End Date= <%= booking.end_date %></p>
+    <%= link_to "Edit ", edit_plant_booking_path(booking.plant, booking), class:"button-blue" %>
+    <%= link_to "Delete ", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-small" %>
+  </div>
+  <% end %>
+
 </div>
