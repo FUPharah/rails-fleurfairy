@@ -7,9 +7,6 @@
           <% @plants.each do |plant| %>
           <div class="card" >
             <div class="card-img" style="background-image: url(<%= plant.photo.attached? ? cl_image_path(plant.photo.key) : plant.url %>)" >
-              <div class="card-Link" >
-                <%= link_to 'BOOK',  new_plant_booking_path(plant) %>
-              </div>
             </div>
             <div class="card-infos" >
               <div class="card-title" >
@@ -18,6 +15,9 @@
               </div>
               <div class="card-price" >
                 <h5><%= plant.price %>€</h5>
+              </div>
+              <div class="card-Link" >
+                <%= link_to 'Book now',  new_plant_booking_path(plant) %>
               </div>
             </div>
           </div>

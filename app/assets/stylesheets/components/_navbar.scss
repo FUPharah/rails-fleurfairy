@@ -2,32 +2,42 @@
   justify-content: space-between;
   background: white;
 	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+  display: flex;
 }
 
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.dropdown-toggle .person {
-  padding-top: 10px;
+.avatar .dropdown-toggle {
+  justify-content: center;
 }
 
 .navbar-brand img {
   width: 60px;
   margin-left: 30px;
+  justify-content: center;
 }
 
 .nav-item {
-  padding-left: 20px;
+  // padding-left: 20px;
   padding-right: 20px;
-  padding-top: 10px;
+  // padding-top: 10px;
+  justify-content: center;
 }
 
 .nav-link {
   padding-left: 30px;
   padding-right: 30px;
+
 }
 
 .nav-link:hover {
   color:#04ACB5;
+}
+
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
 }
