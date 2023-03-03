@@ -6,8 +6,7 @@
         <div class="cards">
           <% @plants.each do |plant| %>
           <div class="card" >
-            <div class="card-img" style="background-image: url(<%= plant.photo.attached? ? cl_image_path(plant.photo.key) : plant.url %>)">
-            </div>
+            <%= link_to "", plant_path(plant), class: "card-img", style: "background-image: url(#{plant.photo.attached? ? cl_image_path(plant.photo.key) : plant.url})" %>
             <div class="card-infos" >
               <div class="card-title" >
                 <h3><%= link_to plant.title, plant_path(plant) %> </h3>
