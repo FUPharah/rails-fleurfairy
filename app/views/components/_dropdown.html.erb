@@ -3,12 +3,12 @@
       <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key,
           crop: :fill,
-          class: "rounded avatar dropdown-toggle",
+          class: " avatar dropdown-toggle",
           id:"navbarDropdown", data: {bs_toggle: "dropdown"},
           aria: {expanded: "false", haspopup: "true"}
           %>
       <% else %>
-        <%= image_tag('user.svg', class: "rounded") %>
+        <%= image_tag('user.svg', class: "avatar") %>
       <% end %>
 
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -19,7 +19,7 @@
     </div>
   <% else %>
       <%= link_to new_user_session_path, class: "nav-link person" do %>
-        <%= image_tag('user.svg', class: "rounded", size: "30x30") %>
+        <%= image_tag('user.svg', class: "avatar") %>
       <% end %>
   <% end %>
 </li>
