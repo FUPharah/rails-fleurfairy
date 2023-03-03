@@ -37,22 +37,23 @@ margin-bottom: 30px;
   border-radius: 7px;
 }
 
-.card-link{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
 .card-title {
   position: absolute;
   top: 10px;
   left: 10px;
 }
 
+.card-book{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .card-price {
   position: absolute;
-  bottom: 10px;
-  right: 20px;
+  bottom: -10px;
+  right: 10px;
+  font-weight: bold;
 }
 
 .card-booking {
