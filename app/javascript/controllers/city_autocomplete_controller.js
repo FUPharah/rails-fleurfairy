@@ -18,7 +18,7 @@ export default class extends Controller {
   }
 
   #setInputValue(event) {
-    this.cityTarget.value = event.result["city"]
+    this.cityTarget.value = event.result.text
   }
 
   #clearInputValue() {
