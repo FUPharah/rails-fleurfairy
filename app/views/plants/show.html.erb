@@ -11,8 +11,24 @@
   <h3 class="my-plant"><%= @plant.title %></h3>
   <p class="my-plant"><%= @plant.city %></p>
   <p class="my-plant"><%= @plant.description %></p>
+
+  <h2><%= pluralize @plant.reviews.size, "review" %></h2>
+
+    <div>
+      <% if @plant.reviews.blank? %>
+        Be the first to leave a review for <%= @plant.name %>
+      <% else %>
+        <% @plant.reviews.each do |review| %>
+          <p>Review: <%= review.content %></p>
+          <p>Rating: <%= review.rating %></p>
+        <% end %>
+      <% end %>
+</div>
   <div class="center mt-4" >
   <%= link_to 'Book this plant', new_plant_booking_path(@plant), class: "button-blue" %>
+  </div>
+  <div>
+  <%= link_to 'Add a review', new_plant_review_path(@plant) %>
   </div>
   <%= link_to 'Back', plants_path(@plants), class:"button-small" %>
 </div>
