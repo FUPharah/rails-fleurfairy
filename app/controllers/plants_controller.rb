@@ -39,7 +39,7 @@ class PlantsController < ApplicationController
   def update
     @plant = Plant.find(params[:id])
     @plant.update(plant_params)
-    redirect_to dashboard_path
+    redirect_to myplants_path
   end
 
   def show

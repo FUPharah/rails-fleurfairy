@@ -16,7 +16,7 @@
 
     <div>
       <% if @plant.reviews.blank? %>
-        Be the first to leave a review for <%= @plant.name %>
+        Be the first to leave a review for <%= @plant.title %>
       <% else %>
         <% @plant.reviews.each do |review| %>
           <p>Review: <%= review.content %></p>
