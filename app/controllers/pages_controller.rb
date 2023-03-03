@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_plant, only: %i[dashboard myplants]
+  before_action :set_plant, only: %i[dashboard]
   before_action :set_user, only: %i[dashboard myplants]
   before_action :authenticate_user!, only: [:dashboard]
 
