@@ -1,6 +1,6 @@
 <div class="container show-my-plant">
 
-<h3> Your Bookings </h3>
+<h1> Your Bookings </h1>
   <% Booking.where(user_id: current_user.id).each do |booking| %>
   <div class=".form-control flex-item my-plant" >
     <h2><%= link_to booking.plant.title, plant_path(booking.plant) %></h2>
@@ -10,7 +10,6 @@
     <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-small" %>
 </div>
   <% end %>
-</div>
 
   <h1> Your booked plants </h1>
   <% plants = Plant.where(user_id: current_user.id).each do |plant| %>
@@ -23,3 +22,4 @@
     </div>
     <% end %>
   <% end %>
+</div>
