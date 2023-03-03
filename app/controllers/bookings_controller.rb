@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_plant, only: %i[new create edit update]
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_user, only: %i[show]
 
   def show
     @booking = Booking.find(params[:id])
@@ -43,6 +44,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def set_plant
     @plant = Plant.find(params[:plant_id])
