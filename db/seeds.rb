@@ -6,12 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.destroy_all
+Plant.destroy_all
+Booking.destroy_all
+Review.destroy_all
+  
 5.times do
   email = Faker::Internet.email
-  user = User.new(email: email, password: "123456")
+  user = User.new(email: email, password: "123456", first_name: "Whatever", last_name: "Something")
   user.save!
 end
-
+#
 Plant.create!(title: "Beautiful, tall almond tree", city: "Munich/ Germany",
 description: "My 3 metres tall almond tree. It is strikingly beautiful when in flowers, it produces fragrant, five-petaled,
 light pink to white flowers from late January to early April", price: 10, user: User.all.sample, url: "https://www.epicgardening.com/wp-content/uploads/2020/04/Almond-tree-in-flower.jpg" )
