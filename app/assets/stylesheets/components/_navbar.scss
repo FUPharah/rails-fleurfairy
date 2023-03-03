@@ -5,6 +5,10 @@
   display: flex;
 }
 
+.navbar-toggler-icon {
+  justify-content: center;
+}
+
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
@@ -40,4 +44,8 @@
   width: 40px;
   border-radius: 50%;
   text-align: center;
+}
+
+.human {
+  margin-top: 7px;
 }

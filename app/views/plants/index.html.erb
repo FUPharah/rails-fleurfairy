@@ -13,11 +13,11 @@
                 <h3><%= link_to plant.title, plant_path(plant) %> </h3>
                 <p><%= plant.city %></p>
               </div>
-              <div class="card-price" >
-                <h5><%= plant.price %>€</h5>
-              </div>
-              <div class="card-Link" >
+              <div class="card-book" >
                 <%= link_to 'Book now',  new_plant_booking_path(plant) %>
+              </div>
+              <div class="card-price" >
+                <p><%= plant.price %>€</p>
               </div>
             </div>
           </div>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="map">
-      <div style="width: 100%; height: 600px;"
+      <div style="width: 100%; height: 400px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
