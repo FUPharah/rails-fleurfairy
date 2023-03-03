@@ -1,12 +1,14 @@
 <div class="container show-my-plant">
 
+  <div class="my-plant">
+    <% if @plant.photo.attached?  %>
+      <%= cl_image_tag @plant.photo.key, crop: :fill %>
+    <% else %>
+      <img src="<%= @plant.url %>" style="width: 100%">
+    <% end %>
+  </div>
 
-  <% if @plant.photo.attached?  %>
-    <%= cl_image_tag @plant.photo.key, crop: :fill %>
-  <% else %>
-    <img src="<%= @plant.url %>" style="width: 100%">
-  <% end %>
-  <p class="my-plant"><%= @plant.title %></p>
+  <h3 class="my-plant"><%= @plant.title %></h3>
   <p class="my-plant"><%= @plant.city %></p>
   <p class="my-plant"><%= @plant.description %></p>
 
@@ -26,7 +28,7 @@
   <%= link_to 'Book this plant', new_plant_booking_path(@plant), class: "button-blue" %>
   </div>
   <div>
-  <%= link_to 'Add a review', new_plant_review_path(@plant)%>
+  <%= link_to 'Add a review', new_plant_review_path(@plant) %>
   </div>
-  <%= link_to 'Back', plants_path(@plants) %>
+  <%= link_to 'Back', plants_path(@plants), class:"button-small" %>
 </div>

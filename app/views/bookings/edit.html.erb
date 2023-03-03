@@ -1,13 +1,13 @@
 <div class="container show-my-plant">
 
-  <h1>You're editing your <%= @booking.plant.title %> booking</h1>
+  <h1>You're editing the booking for <%= @booking.plant.title %> </h1>
 
 
   <%= simple_form_for [@plant, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class:"button-blue"%>
   <% end %>
-  <%= link_to "Go Back to Dashboard", dashboard_path %>
+  <%= link_to "Back", dashboard_path, class:"button-small" %>
 
 </div>

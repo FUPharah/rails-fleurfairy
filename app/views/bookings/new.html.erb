@@ -1,4 +1,4 @@
-<div class="container show-my-plant">
+<div class="container show-my-plant ">
 
   <h1>You're booking <%= @plant.title %>.</h1>
 
@@ -7,5 +7,5 @@
     <%= f.input :end_date %>
     <%= f.button :submit, class:"button-blue" %>
   <% end %>
-  <%= link_to "back", plant_path(@plant) %>
+  <%= link_to "back", plant_path(@plant), class:"button-small" %>
 </div>
