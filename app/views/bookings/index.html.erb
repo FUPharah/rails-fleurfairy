@@ -11,3 +11,15 @@
 </div>
   <% end %>
 </div>
+
+  <h1> Your booked plants </h1>
+  <% plants = Plant.where(user_id: current_user.id).each do |plant| %>
+    <div class=".form-control flex-item my-plant" >
+      <% plant.bookings.each do |booking|  %>
+        <%= booking.user.email %>
+        <p>Start Date= <%= booking.start_date %></p>
+        <p>End Date= <%= booking.end_date %></p>
+        <%= link_to "Delete ", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-small" %>
+    </div>
+    <% end %>
+  <% end %>
