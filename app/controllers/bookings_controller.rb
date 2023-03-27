@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.plant = @plant
     @booking.user = current_user
     if @booking.save
-      redirect_to plant_path(@plant), notice: "Thank you for booking #{@plant.title}."
+      redirect_to bookings_path, notice: "Thank you for booking #{@plant.title}."
     else
       render :new
     end

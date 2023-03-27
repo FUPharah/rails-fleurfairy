@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to plant_path(@plant), notice: "Thank you for adding a review."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
