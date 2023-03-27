@@ -91,3 +91,4 @@ gem "geocoder"
 gem "cloudinary"
 
 gem 'image_processing'
+
