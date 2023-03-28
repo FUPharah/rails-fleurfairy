@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: rails_fleurfairy_production
-  username: rails_fleurfairy
-  password: <%= ENV["RAILS_FLEURFAIRY_DATABASE_PASSWORD"] %>
+  # username: rails_fleurfairy
+  # password: <%= ENV["RAILS_FLEURFAIRY_DATABASE_PASSWORD"] %>
